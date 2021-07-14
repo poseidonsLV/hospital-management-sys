@@ -1,0 +1,42 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Patient Admission!{% endblock %}
+
+{% block body %}
+
+    <main id="rooms">
+        <div class="table rooms">
+            <div class="table-header">
+                <p>Type</p>
+                <p>Room No</p>
+                <p>Price</p>
+                <p>Available</p>
+            </div>
+            <div class="table-records">
+                {% for room in rooms  %}
+                    <form method="POST" class="table-record" id="rooms-form">
+                        <p class="type">{{ room.type }}</p>
+                        <p class="roomNo">{{ room.Room }}</p>
+                        <p class="price">{{ room.Price }}</p>
+                        <input style="display: none" type="hidden" value="{{ room.id }}" name="roomid">
+                        {% if room.available %}
+                                <input class="change-availability" style="display: none" type="hidden" value="true" name="available" id="available">
+                                <p style="flex: 0.4">
+                                    <button type="submit" class="green">Available</button>
+                                </p>
+                        {% else %}
+                                <input class="change-availability" style="display: none" type="hidden" value="false" name="available" id="available">
+                                <p style="flex: 0.4">
+                                    <button type="submit" class="red">Unavailable</button>
+                                </p>
+                        {% endif %}
+                    </form>
+                {% endfor %}
+            </div>
+        </div>
+        {% for message in app.flashes('error') %}
+            {% include 'layouts/messageBox.html.twig' with {'messages': message} %}
+        {% endfor %}
+    </main>
+{% endblock %}
+

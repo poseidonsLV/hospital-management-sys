@@ -1,0 +1,13 @@
+#currentPatientList{
+  .header{
+    &__options {
+      width: 50%;
+      justify-content: flex-end;
+      input {
+        padding: 10px;
+        max-width: 300px;
+        width: 100%;
+      }
+    }
+  }
+}

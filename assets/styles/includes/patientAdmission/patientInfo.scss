@@ -1,0 +1,68 @@
+#patientInfo {
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    #form-right{
+      .form-options {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        div {
+          display: flex;
+          align-items: center;
+          button {
+            margin-left: 15px;
+          }
+        }
+      }
+      .input-group.multiple .curr-time {
+        display: flex;
+        align-items: center;
+        font-weight: 550;
+        #text {
+          padding-right: 10px;
+        }
+        #time {
+          text-transform: uppercase;
+        }
+      }
+    }
+    #form-right,#form-left {
+      .input-group.multiple {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .input-group:nth-child(1) {
+          padding-right: 15px;
+        }
+        .input-group {
+          display: flex;
+          align-items: center;
+          margin: 0;
+          input {
+            width: 100%;
+          }
+        }
+      }
+      .input-group {
+        margin: 10px 0;
+        max-width: 100%;
+        label {
+          padding-right: 10px;
+          font-weight: 500;
+          font-size: .8rem;
+        }
+        input {
+          height: 25px;
+          width: 100%;
+        }
+        select {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+#header {
+  height: 40px;
+  width: 100%;
+  margin-bottom: 10px;
+  nav {
+    width: 100%;
+    display: flex;
+    box-shadow: 0px 2.5px 8px .1px rgba(128, 128, 128, 0.3);
+    a {
+      border-right: 1px solid rgba(128, 128, 128, 0.2);
+      text-decoration: none;
+      color: #1f6df8;
+      font-weight: 550;
+      padding: 10px 25px;
+      transition: all .25s;
+      display: grid;
+      place-items: center;
+      &.active {
+        color: white;
+        background: linear-gradient(180deg, #3a70f8, #1859f8);
+      }
+      &:hover {
+        color: white;
+        background: linear-gradient(180deg, #3a70f8, #1859f8);
+      }
+    }
+  }
+}

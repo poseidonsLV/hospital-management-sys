@@ -1,0 +1,20 @@
+#availableRooms {
+  #addRoom-section {
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      input {
+        height: 25px;
+        width: 100%;
+      }
+    }
+    .addRoom-options {
+      display: flex;
+      margin-top: 10px;
+      button {
+        margin-right: 15px;
+      }
+    }
+  }
+}

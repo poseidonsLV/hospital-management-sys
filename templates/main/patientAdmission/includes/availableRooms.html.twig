@@ -1,0 +1,56 @@
+<section id="availableRooms">
+
+    <header class="header">
+        <p class="header__title">Available Rooms</p>
+        <div class="header__options">
+            <button id="addRoom" class="blue">Add Room</button>
+            <button id="refresh" class="green"> <i class="fas fa-trash-alt"></i> Refresh</button>
+        </div>
+    </header>
+
+    <div class="table rooms">
+        <div class="table-header">
+            <p>Type</p>
+            <p>Room No</p>
+            <p>Price</p>
+        </div>
+        <div class="table-records">
+            {% for aRoom in availableRooms  %}
+            <div class="table-record">
+                <p class="type">{{ aRoom.type }}</p>
+                <p class="roomNo">{{ aRoom.Room }}</p>
+                <p class="price">{{ aRoom.Price }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <section id="addRoom-section" class="hidden">
+        <form method="POST">
+            <div class="input-group">
+                <label for="roomType">Room Type</label>
+                <input required type="text" name="roomType" id="roomType">
+            </div>
+            <div class="input-group">
+                <label for="room">Room</label>
+                <input required type="text" name="room" id="room">
+            </div>
+            <div class="input-group">
+                <label for="roomPrice">Room Price</label>
+                <input required type="number" name="roomPrice" id="roomPrice">
+            </div>
+            <div class="addRoom-options">
+                <button type="submit" id="addRoom-save" class="green">Save</button>
+                <button id="addRoom-close" class="red">Close</button>
+                <input type="hidden" name="addRoom">
+            </div>
+        </form>
+    </section>
+
+</section>
+
+<script>
+    $('#refresh').click(function() {
+        window.location.reload();
+    })
+</script>

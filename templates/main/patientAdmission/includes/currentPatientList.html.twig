@@ -1,0 +1,38 @@
+<section id="currentPatientList">
+    <header class="header">
+        <p class="header__title">Active Patient List</p>
+        <div class="header__options">
+{#            <button id="addRoom" class="blue">Add Room</button>#}
+            <input type="text" placeholder="Search...">
+        </div>
+    </header>
+    <div class="table patients">
+        <div class="table-header">
+            <p>ID</p>
+            <p>Name</p>
+            <p>Contact</p>
+            <p>Address</p>
+            <p>Room No</p>
+            <p>Date</p>
+            <p>Time</p>
+        </div>
+        <div class="table-records">
+
+            {% for patient in activePatients %}
+
+                <div class="table-record">
+                    <p class="ID">{{ patient.id }}</p>
+                    <p class="Name">{{ patient.name }}</p>
+                    <p class="Contact">{{ patient.contact }}</p>
+                    <p class="Address">{{  patient.village ~ ", " ~ patient.district }}</p>
+                    <p class="RoomNo">{{ patient.room }}</p>
+                    <p class="Date">{{ patient.date|date("m/d/Y") }}</p>
+                    <p class="Time">{{ patient.time }}</p>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+</section>

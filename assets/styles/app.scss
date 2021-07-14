@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+@import 'resets.scss';
+@import 'mixins.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+    font-family: 'Manrope', sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+.active {
+    display: block;
+}
+
+#message-box {
+    position: fixed;
+    height: fit-content;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 20px;
+    bottom: 20px;
+    right: 10px;
+    background: cornflowerblue;
+    font-size: 0.9rem;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0px 0px 12px .1px #a8a8a8;
+    p {
+        margin: 5px 0;
+    }
+}
+
+@import './includes/header.scss';
+@import './includes/patientAdmission/main.scss';
+@import './includes/rooms/rooms.scss';

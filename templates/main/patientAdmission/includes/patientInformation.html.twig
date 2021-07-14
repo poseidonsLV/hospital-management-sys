@@ -1,0 +1,157 @@
+<section id="patientInfo">
+    <header class="header">
+        <p class="header__title">Patient Information</p>
+        <div class="header__options">
+            <button id="new" class="blue">New</button>
+            <button id="delete" class="red"> <i class="fas fa-trash-alt"></i> Delete</button>
+        </div>
+    </header>
+
+    <form method="POST">
+        <div id="form-left">
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" required name="name" id="name">
+            </div>
+            <div class="input-group">
+                <label for="contact">Contact:</label>
+                <input type="text" required name="contact" id="contact">
+            </div>
+            <div class="input-group multiple">
+
+                <div class="input-group">
+                    <label for="gender">Gender:</label>
+                    <select required name="gender" id="gender">
+                        <option value="Man">Man</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="age">Age:</label>
+                    <input type="number" required name="age" id="age">
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="family">Father/Husband:</label>
+                <select required name="family" id="family">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="location">Village/Road:</label>
+                <input required type="text" name="location" id="location">
+            </div>
+            <div class="input-group">
+                <label for="district">District:</label>
+                <input required type="text" name="district" id="district">
+            </div>
+        </div>
+
+        <div id="form-right">
+
+            <div class="input-group">
+                <label for="emergencyId">Emergency ID:</label>
+                <input required type="number" name="emergencyId" id="emergencyId">
+            </div>
+
+            <div class="input-group">
+                <label for="occupation">Occupation:</label>
+                <input required type="text" name="occupation" id="occupation">
+            </div>
+
+            <div class="input-group multiple">
+                <div class="input-group">
+                    <label for="BloodGroup">Blood Group:</label>
+                    <select required name="BloodGroup" id="BloodGroup">
+                        <option value="a">A</option>
+                        <option value="a-">A-</option>
+                        <option value="b">B</option>
+                        <option value="b-">B-</option>
+                        <option value="o">O</option>
+                        <option value="o-">O-</option>
+                        <option value="ab">AB</option>
+                        <option value="ab-">AB-</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="religion">Religion:</label>
+                    <select required name="religion" id="religion">
+                        <option value="Christianity">Christianity</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Nonreligious">Nonreligious</option>
+                        <option value="Hinduism">Hinduism</option>
+                        <option value="Buddhism">Buddhism</option>
+                        <option value="Ethnicreligions">Ethnic religions</option>
+                        <option value="Sikhism">Sikhism</option>
+                        <option value="Judaism">Judaism</option>
+                        <option value="Spiritism">Spiritism</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group multiple">
+                <div class="input-group">
+                    <label for="room">Room:</label>
+                    <select required name="room" id="room">
+                        {% for aRoom in availableRooms  %}
+                            <option value="{{ aRoom.room }}">{{ aRoom.room }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="price">Price:</label>
+                    <input required type="number" name="price" id="price">
+                </div>
+            </div>
+
+            <div class="input-group multiple">
+                <div class="input-group">
+                    <label for="admissionFee">Admission Fee:</label>
+                    <input required type="number" name="admissionFee" id="admissionFee">
+                </div>
+                <div class="input-group">
+                    <label for="advance">Advance:</label>
+                    <input required type="text" name="advance" id="advance">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="consultant">Consultant:</label>
+                <select required name="consultant" id="consultant">
+                    <option value="1">John Fake</option>
+                    <option value="2">Jane Fake</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="referred">Referred By:</label>
+                <input required type="text" name="referred" id="referred">
+            </div>
+
+            <div class="input-group multiple">
+                <div>
+                    <label for="date">Date:</label>
+                    <input required type="date" name="date" id="date">
+                </div>
+
+                <div class="curr-time">
+                    <i class="far fa-clock"></i> <p id="text">Time: </p> <p id="time">{{ "now"|date('h:i a') }}</p>
+                </div>
+
+            </div>
+
+            <div class="form-options">
+                <div>
+                    <button id="update" class="pink">Update Info</button>
+                    <button id="save" class="green">Save</button>
+                    <input type="hidden" name="patientInfo">
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+</section>

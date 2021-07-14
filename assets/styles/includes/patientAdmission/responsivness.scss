@@ -1,0 +1,14 @@
+@media (max-width: 1024px) {
+  #header {
+    margin-bottom: 30px;
+  }
+  #patientAdmission {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr 1fr 1fr !important;
+    grid-template-areas: "pi pi"
+                         "ar ar"
+                         "cpl cpl";
+  }
+}

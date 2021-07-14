@@ -1,0 +1,13 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Patient Admission!{% endblock %}
+
+{% block body %}
+
+    <main id="patientAdmission">
+        {% include 'main/patientAdmission/includes/patientInformation.html.twig' %}
+        {% include 'main/patientAdmission/includes/availableRooms.html.twig' %}
+        {% include 'main/patientAdmission/includes/currentPatientList.html.twig' %}
+    </main>
+
+{% endblock %}
